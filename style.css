@@ -1,64 +1,103 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
     font-family: sans-serif;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: rgb(253, 215, 149);
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
     width: 60%;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px ;
+    box-shadow: 0px 0px 10px;
     margin: 20px 0px;
 }
+
 @media (max-width: 1024px) {
-    .container{
+    .container {
         width: 80%;
     }
 }
+
 @media (max-width: 767px) {
-    .container{
+    .container {
         width: 90%;
     }
 }
-#analizBtn{
+
+#analizBtn {
     font-size: 1.5rem;
     padding: 10px;
     margin-top: 10px;
+    border-radius: 3px;
+    background-color: greenyellow;
 }
-#metinBox{
+#analizBtn:hover{
+    background-color: darkorange;
+}
+#yeni-analizBtn {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background-color:cornflowerblue;
+    display: none;
+}
+#yeni-analizBtn:hover{
+    background-color: darkorange;
+}
+
+#metinBox {
     min-width: 100%;
     max-width: 100%;
     height: 50vh;
     padding: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-top: 10px;
+    text-align: justify;
 }
 
-.sonucPanel{
+.metinBox {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 50vh;
+    height: auto;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    text-align: justify;
+    border: 1px solid rgb(118, 118, 118);
+    border-image: initial;
+    border-radius: 3px;
+}
+
+.sonucPanel {
     width: 100%;
     border: 1px solid #ddd;
-    padding:10px;
+    padding: 10px;
 }
-.table-container{
 
-}
-table{
+.table-container {}
+
+table {
     width: 100%;
     border-collapse: collapse;
     min-width: 300px;
 }
-th,td{
+
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
@@ -66,36 +105,54 @@ th,td{
     width: 10%;
     cursor: pointer;
 }
-td:hover{
+
+td:hover {
     background-color: chartreuse;
 }
 
-h3{
+.secilmis-element {
+    background-color: gold !important;
+}
+
+h3 {
     margin-bottom: 10px;
     margin-top: 10px;
 }
-h2{
+
+h2 {
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     background-color: #f4f4f4;
 }
-.sncH{
-    background-color: #eee ;
+
+.sncH {
+    background-color: #eee;
 }
-.sncH:hover{
-    background-color: #eee ;
-    cursor:auto;
+
+.sncH:hover {
+    background-color: #eee;
+    cursor: auto;
 }
-.favori-kelime{
-    padding: 8px;
+
+.favori-kelime {
+    display: inline-block;
+    padding: 2px 6px;
     border-radius: 20px;
     background-color: chartreuse;
     line-height: 2.5rem;
+    margin: 5px;
 }
-.favori-kelime:hover{
-    background-color:darkorange;
+
+.favori-kelime:hover {
+    background-color: darkorange;
     cursor: pointer;
     border: 2px solid #bbb;
 }
 
+.highlight {
+    background-color: chartreuse;
+    padding: 2px 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
