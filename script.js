@@ -119,6 +119,7 @@ function metniAnalizEt(metin) {
     harfleriVurgula();
     rakamlariVurgula();
     sembolleriVurgula();
+    istenilenKelimeyiVurgula(".")
 };
 
 function istenilenKelimeyiVurgula(kelime) {
