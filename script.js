@@ -119,13 +119,15 @@ function metniAnalizEt(metin) {
     harfleriVurgula();
     rakamlariVurgula();
     sembolleriVurgula();
-    istenilenKelimeyiVurgula(".")
 };
 
 function istenilenKelimeyiVurgula(kelime) {
     metinBox2.innerHTML = metin.value;
     const regex = new RegExp(`${kelime}`, 'gi');
-    const yeniMetin = metinBox2.innerHTML.replace(regex, `<span class="highlight">${kelime}</span>`);
+    if(kelime === ".")
+        const yeniMetin = metinBox2.innerHTML.replace(/\./g, `<span class="highlight">${kelime}</span>`);
+    else
+        const yeniMetin = metinBox2.innerHTML.replace(regex, `<span class="highlight">${kelime}</span>`);
 
     metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
 }
