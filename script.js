@@ -18,7 +18,7 @@ const container = document.querySelector(".metin-girisi-panel");
 const metinBox2 = document.createElement("div");
 
 function kelimeSay(gonderilenMetin) {
-    kelimeDizisi = gonderilenMetin.trim().split(/\s+/).map(kelime => kelime.replace(/[^a-zA-ZğüşöçıİĞÜŞÖÇ]+/g, '')).filter(kelime => kelime.length > 0);
+    kelimeDizisi = gonderilenMetin.trim().split(/\s+/).map(kelime => kelime.replace(/[^a-zA-ZğüşöçıIİĞÜŞÖÇ]+/g, '')).filter(kelime => kelime.length > 0);
     return kelimeDizisi.length;
 };
 
