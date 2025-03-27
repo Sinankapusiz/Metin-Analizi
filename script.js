@@ -130,11 +130,14 @@ function istenilenKelimeyiVurgula(kelime) {
         metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
     }
     else if (kelime === "i") {
-        const yeniMetin = metinBox2.innerHTML.replace(/\i/g, `<span class="highlight">${kelime}</span>`);
+        const regex = new RegExp("[İi]", 'gu');
+        let yeniMetin = metinBox2.innerHTML.replace(regex, `<span class="highlight">${kelime}</span>`);
         metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
+        console.log("İşlem yapıldı.");
     }
     else if (kelime === "ı") {
-        const yeniMetin = metinBox2.innerHTML.replace(/\ı/g, `<span class="highlight">${kelime}</span>`);
+        const regex = new RegExp("[Iı]", 'gu');
+        const yeniMetin = metinBox2.innerHTML.replace(regex, `<span class="highlight">${kelime}</span>`);
         metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
     }
 
