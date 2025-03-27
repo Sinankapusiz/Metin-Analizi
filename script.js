@@ -123,20 +123,24 @@ function metniAnalizEt(metin) {
 
 function istenilenKelimeyiVurgula(kelime) {
     metinBox2.innerHTML = metin.value;
-    /*const regex = new RegExp(`${kelime}`, 'gi');
-    if(kelime === ".")
-    {
+    const regex = new RegExp(`${kelime}`, 'gi');
+    if (kelime === ".") {
         const yeniMetin = metinBox2.innerHTML.replace(/\./g, `<span class="highlight">${kelime}</span>`);
         metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
     }
-        
-    else
-    {
+    else if (kelime === "i") {
+        const yeniMetin = metinBox2.innerHTML.replace(/\i/g, `<span class="highlight">${kelime}</span>`);
+        metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
+    }
+    else if (kelime === "ı") {
+        const yeniMetin = metinBox2.innerHTML.replace(/\ı/g, `<span class="highlight">${kelime}</span>`);
+        metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
+    }
+
+    else {
         const yeniMetin = metinBox2.innerHTML.replace(regex, `<span class="highlight">${kelime}</span>`);
         metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
-    }*/
-        const yeniMetin = metinBox2.innerHTML.replace(kelime, `<span class="highlight">${kelime}</span>`);
-        metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
+    }
 }
 analizBtn.addEventListener("click", () => {
     analizDurumu = true;
@@ -191,7 +195,7 @@ function harfleriVurgula() {
     allHarf.forEach(btn => {
         btn.onclick = function () {
             if (analizDurumu === true) {
-                istenilenKelimeyiVurgula(btn.textContent[0]);
+                istenilenKelimeyiVurgula(btn.textContent[1]);
                 secimiDegistir(btn);
             }
         };
