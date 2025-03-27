@@ -10,7 +10,15 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(253, 215, 149);
+    background-image: linear-gradient(to right top, #000369, #150877, #250e85, #321593, #401ba2, #5618a2, #6914a2, #7a10a2, #8d0094, #9a0086, #a40078, #aa006c);
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    overflow-x: hidden;
+}
+
+h1 {
+    margin: 10px 0px;
 }
 
 .container {
@@ -22,6 +30,8 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 10px;
     margin: 20px 0px;
+    transition: all 1s;
+    z-index: 1;
 }
 
 @media (max-width: 1024px) {
@@ -36,26 +46,51 @@ body {
     }
 }
 
+textarea::placeholder {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+}
+
 #analizBtn {
     font-size: 1.5rem;
     padding: 10px;
     margin-top: 10px;
     border-radius: 3px;
-    background-color: greenyellow;
+    background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
+    cursor: pointer;
+    border-color: #0072ff;
+    border-style: solid;
+    color: white;
+    transition: all 0.5s;
 }
-#analizBtn:hover{
-    background-color: darkorange;
+
+#analizBtn:hover {
+    background: linear-gradient(90deg, #2888ff 0%, #29d3f6 100%);
+    border-color: #2888ff;
+    color: #000000;
 }
+
 #yeni-analizBtn {
     font-size: 1.5rem;
     padding: 10px;
     margin-top: 10px;
     border-radius: 3px;
-    background-color:cornflowerblue;
     display: none;
+    cursor: pointer;
+    border-color: #1fa700;
+    border-style: solid;
+    background: linear-gradient(90deg, #2fff00 0%, #00ff88 100%);
+    color: white;
+    transition: all 0.5s;
 }
-#yeni-analizBtn:hover{
-    background-color: darkorange;
+
+#yeni-analizBtn:hover {
+    background: linear-gradient(90deg, #46fc1d 0%, #30fd9d 100%);
+    border-color: #3cd11a;
+    color: rgb(1, 1, 1);
 }
 
 #metinBox {
@@ -88,8 +123,6 @@ body {
     padding: 10px;
 }
 
-.table-container {}
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -117,6 +150,7 @@ td:hover {
 h3 {
     margin-bottom: 10px;
     margin-top: 10px;
+
 }
 
 h2 {
@@ -155,4 +189,34 @@ h2 {
     padding: 2px 5px;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.sonuc {
+    display: none;
+}
+
+.kelime {
+    position: absolute;
+    white-space: nowrap;
+    animation: hareket 5s linear infinite alternate;
+    font-size: 1.5rem;
+    color: white;
+}
+
+@keyframes hareket {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+
+.kelimeler {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
 }

@@ -10,233 +10,237 @@
 </head>
 
 <body>
+    <div class="kelimeler"></div>
     <div class="container">
         <h1>Metin Analizi</h1>
         <div class="metin-girisi-panel">
-            <textarea name="" id="metinBox"></textarea>
-        </div>    
+            <textarea name="" id="metinBox" placeholder="LÜTFEN METNİ BU ALANA GİRİNİZ!"></textarea>
+        </div>
         <button id="analizBtn">Metni Analiz Et</button>
         <button id="yeni-analizBtn">Yeni Analiz</button>
-        <h2>Sonuç</h2>
-        <div class="sonucPanel"> 
-            <div class="sonuc-ozeti">
-                <table id="ozet-table">
-                    <h3>Özet</h3>
-                    <tbody>
-                        <tr>
-                            <td>Kelime Sayısı</td>
-                            <td class="sncH">0</td>
-                            <td>Harf Sayısı</td>
-                            <td class="sncH">0</td>
-                            <td>Rakam Sayısı</td>
-                            <td class="sncH">0</td>
-                            <td>Sembol Sayısı</td>
-                            <td class="sncH">0</td>
-                            <td>Boşluk Sayısı</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                    </tbody>
-                </table>
-            </div> 
-            <div class="favori-Kelimele-panel">
-                <h3>Favori Kelimeler</h3>
-                <div id="favori-kelimeler">
-                </div>      
-            </div>      
-            <div class="table-container">
-                <table id="alfabe-table">
-                    <h3>Alfabe</h3>             
-                    <tbody>
-                        <tr>
-                            <td class="harf">Aa</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Bb</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Cc</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Çç</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Dd</td>
-                            <td class="sncH">0</td>
-                        </tr>    
-                        <tr>
-                            <td class="harf">Ee</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Ff</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Gg</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Ğğ</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Hh</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        <tr>
-                            <td class="harf">Iı</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">İi</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Jj</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Kk</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Ll</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        <tr>
-                            <td class="harf">Mm</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Nn</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Oo</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Öö</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Pp</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        <tr>
-                            <td class="harf">Rr</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Ss</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Şş</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Tt</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Uu</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        <tr>
-                            <td class="harf">Üü</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Vv</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Yy</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Zz</td>
-                            <td class="sncH">0</td>
-                            <td class="harf">Xx</td>
-                            <td class="sncH">0</td>
-                        </tr> 
-                        <tr>
-                            <td class="harf">Ww</td>
-                            <td class="sncH">0</td>
-                        </tr>              
-                    </tbody>
-                </table>
-                <table id="rakam-table">
-                    <h3>Rakam</h3>             
-                    <tbody>
-                        <tr>
-                            <td class="rakam">0</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">1</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">2</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">3</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">4</td>
-                            <td class="sncH">0</td>
-                        </tr>   
-                        <tr>
-                            <td class="rakam">5</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">6</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">7</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">8</td>
-                            <td class="sncH">0</td>
-                            <td class="rakam">9</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        
-                    </tbody>
-                </table>
-                <table id="sembol-table">
-                    <h3>Sembol</h3>             
-                    <tbody>
-                        <tr>
-                            <td class="sembol">.</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">,</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">;</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">:</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">!</td>
-                            <td class="sncH">0</td>
-                        </tr> 
-                        <tr>
-                            <td class="sembol">+</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">-</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">×</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">÷</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">=</td>
-                            <td class="sncH">0</td>
-                        </tr>    
-                        <tr>
-                            <td class="sembol">≈</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">√</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">∞</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">$</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">€</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        <tr>
-                            <td class="sembol">₺</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">£</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">¥</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">←</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">→</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        <tr>
-                            <td class="sembol">↑</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">↓</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">↔</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">©</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">®</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-                        <tr>
-                            <td class="sembol">™</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">★</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">♥</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">♠</td>
-                            <td class="sncH">0</td>
-                            <td class="sembol">♣</td>
-                            <td class="sncH">0</td>
-                        </tr>  
-             
-                    </tbody>
-                </table>
+        <div class="sonuc">
+            <h2>Sonuç</h2>
+            <div class="sonucPanel">
+                <div class="sonuc-ozeti">
+                    <table id="ozet-table">
+                        <h3>Özet</h3>
+                        <tbody>
+                            <tr>
+                                <td>Kelime Sayısı</td>
+                                <td class="sncH">0</td>
+                                <td>Harf Sayısı</td>
+                                <td class="sncH">0</td>
+                                <td>Rakam Sayısı</td>
+                                <td class="sncH">0</td>
+                                <td>Sembol Sayısı</td>
+                                <td class="sncH">0</td>
+                                <td>Boşluk Sayısı</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="favori-Kelimele-panel">
+                    <h3>Favori Kelimeler</h3>
+                    <div id="favori-kelimeler">
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="alfabe-table">
+                        <h3>Alfabe</h3>
+                        <tbody>
+                            <tr>
+                                <td class="harf">Aa</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Bb</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Cc</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Çç</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Dd</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="harf">Ee</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Ff</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Gg</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Ğğ</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Hh</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="harf">Iı</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">İi</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Jj</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Kk</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Ll</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="harf">Mm</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Nn</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Oo</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Öö</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Pp</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="harf">Rr</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Ss</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Şş</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Tt</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Uu</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="harf">Üü</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Vv</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Yy</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Zz</td>
+                                <td class="sncH">0</td>
+                                <td class="harf">Xx</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="harf">Ww</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="rakam-table">
+                        <h3>Rakam</h3>
+                        <tbody>
+                            <tr>
+                                <td class="rakam">0</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">1</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">2</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">3</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">4</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="rakam">5</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">6</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">7</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">8</td>
+                                <td class="sncH">0</td>
+                                <td class="rakam">9</td>
+                                <td class="sncH">0</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <table id="sembol-table">
+                        <h3>Sembol</h3>
+                        <tbody>
+                            <tr>
+                                <td class="sembol">.</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">,</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">;</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">:</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">!</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="sembol">+</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">-</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">×</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">÷</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">=</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="sembol">≈</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">√</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">∞</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">$</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">€</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="sembol">₺</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">£</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">¥</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">←</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">→</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="sembol">↑</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">↓</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">↔</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">©</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">®</td>
+                                <td class="sncH">0</td>
+                            </tr>
+                            <tr>
+                                <td class="sembol">™</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">★</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">♥</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">♠</td>
+                                <td class="sncH">0</td>
+                                <td class="sembol">♣</td>
+                                <td class="sncH">0</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
     </div>
-    
+
 </body>
 
 </html>

@@ -14,6 +14,8 @@ const sembolTable = document.getElementById('sembol-table');
 const ozetTable = document.getElementById('ozet-table');
 const favoriKelimeler = document.getElementById('favori-kelimeler');
 const container = document.querySelector(".metin-girisi-panel");
+const sonuc = document.querySelector(".sonuc");
+const kelimelerE = document.querySelector(".kelimeler");
 
 const metinBox2 = document.createElement("div");
 
@@ -147,21 +149,36 @@ function istenilenKelimeyiVurgula(kelime) {
     }
 }
 analizBtn.addEventListener("click", () => {
-    analizDurumu = true;
-    metniAnalizEt(metin.value);
-    console.log("Analiz Bitti");
+    if (metin.value) {
+        analizDurumu = true;
+        metniAnalizEt(metin.value);
+        console.log("Analiz Bitti");
 
-    analizBtn.style.display = "none";
-    yeniAnalizBtn.style.display = "block";
-    metin.style.display = "none";
-    metinBox2.classList.add("metinBox");
-    metinBox2.innerHTML = metin.value;
-    container.appendChild(metinBox2);
-    metinBox2.style.display = "block";
-    if (secilenElement !== null) {
-        secilenElement.classList.remove("secilmis-element");
-        secilenElement = null;
+        analizBtn.style.display = "none";
+        yeniAnalizBtn.style.display = "block";
+        metin.style.display = "none";
+        metinBox2.classList.add("metinBox");
+        metinBox2.innerHTML = metin.value;
+        container.appendChild(metinBox2);
+        metinBox2.style.display = "block";
+        if (secilenElement !== null) {
+            secilenElement.classList.remove("secilmis-element");
+            secilenElement = null;
+        }
+
+        sonuc.style.display = "block";
+        document.body.style.setProperty("height", "auto");
+        arkaPlandakiKelimeleriSil();
+        for (let i = 0; i < 10; i++)
+            kelimeOlustur(kelimeDizisi, ((100 * document.body.clientHeight) / (kelimelerE.clientHeight)) - 2);
+
+        kelimelerE.style.setProperty("height", (((100 * document.body.clientHeight) / (kelimelerE.clientHeight))).toString() + "%");
     }
+    else {
+        metin.placeholder = "BU ALANA METİN GİRMEZSEN, NEYİ ANALİZ EDEBİLİRİM? \nLÜTFEN METNİ BU ALANA GİRİNİZ!";
+    }
+
+
 
 });
 yeniAnalizBtn.addEventListener("click", () => {
@@ -237,3 +254,46 @@ function secimiDegistir(degisenElement) {
     }
     secilenElement = degisenElement;
 };
+
+function arkaPlandakiKelimeleriSil() {
+    const kelimeler = document.querySelectorAll(".kelime");
+    kelimeler.forEach(kelime => {
+        kelime.remove();
+    });
+}
+
+// Arka Plan Kelime Animasyonu Kodları
+const kelimeler = ["Programlama", "JavaScript", "React", "CSS", "HTML", "Node.js", "Web Geliştirme", "Frontend", "Backend",
+    "API", "Vue.js", "Git", "Veritabanı", "Yazılım Mühendisliği", "Algoritmalar", "Veritabanı Yönetim Sistemleri",
+    "TypeScript", "Java", "Python", "DevOps", "Docker", "Kubernetes", "CI/CD", "Yapay Zeka", "Makine Öğrenimi",
+    "Deep Learning", "TensorFlow", "Scikit-Learn", "Veritabanı Tasarımı", "NoSQL", "SQL", "MongoDB", "PostgreSQL",
+    "MySQL", "Redis", "Firebase", "GraphQL", "RESTful API", "Lambda", "Cloud Computing", "AWS", "Azure", "GCP",
+    "Jenkins", "PHP", "Ruby", "Swift", "Kotlin", "Flutter", "Android", "iOS", "Mobile Development", "UX/UI",
+    "Prototip", "Wireframe", "Figma", "Adobe XD", "Responsive Design", "Agile", "Scrum", "Kanban", "TDD", "BDD",
+    "Selenium", "Jest", "Mocha", "Chai", "Express.js", "Angular", "Ember.js", "Django", "Flask", "Spring Boot",
+    "ASP.NET", "C#", "C++", "Go", "Rust", "Functional Programming", "Object-Oriented Programming", "Design Patterns",
+    "MVC", "MVVM", "ORM", "Microservices", "Serverless", "Event-Driven Architecture", "Continuous Integration",
+    "Continuous Deployment", "Version Control", "GitHub", "GitLab", "Bitbucket", "Bitwise Operations", "Cloud Storage",
+    "Edge Computing", "Quantum Computing", "Blockchain", "Smart Contracts", "Cryptocurrency", "Docker Compose",
+    "WebAssembly", "PWA", "Progressive Web App", "Service Workers", "SEO", "Web Performance", "Web Accessibility",
+    "Cross-Browser Compatibility", "Debugging", "Profiling", "Code Review", "Refactoring", "Pair Programming",
+    "Unit Testing", "Integration Testing", "End-to-End Testing", "Mocking", "CI Pipeline", "DevOps Culture",
+];
+
+function rastgeleSayi(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function kelimeOlustur(kelimeler, height) {
+    kelimeler.forEach(kelime => {
+        let span = document.createElement("span");
+        span.classList.add("kelime");
+        span.textContent = kelime;
+        span.style.left = `${rastgeleSayi(0, 98)}%`;
+        span.style.top = `${rastgeleSayi(0, height)}%`;
+        span.style.animationDuration = `${rastgeleSayi(3, 6)}s`;
+        kelimelerE.appendChild(span);
+    });
+}
+
+kelimeOlustur(kelimeler, 98);
