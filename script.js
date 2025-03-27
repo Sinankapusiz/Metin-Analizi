@@ -23,7 +23,8 @@ function kelimeSay(gonderilenMetin) {
 };
 
 function harfSay(gonderilenMetin, gonderilenHarf) {
-    const metin = gonderilenMetin.toLowerCase();
+    //const metin = gonderilenMetin.toLowerCase();
+    const metin = gonderilenMetin;
     const harfDizi = metin.split("").filter(harf => harf === gonderilenHarf);
     return harfDizi.length;
 };
