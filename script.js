@@ -125,11 +125,16 @@ function istenilenKelimeyiVurgula(kelime) {
     metinBox2.innerHTML = metin.value;
     const regex = new RegExp(`${kelime}`, 'gi');
     if(kelime === ".")
+    {
         const yeniMetin = metinBox2.innerHTML.replace(/\./g, `<span class="highlight">${kelime}</span>`);
+        metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
+    }
+        
     else
+    {
         const yeniMetin = metinBox2.innerHTML.replace(regex, `<span class="highlight">${kelime}</span>`);
-
-    metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
+        metinBox2.innerHTML = yeniMetin.replace(/\n/g, '<br>');
+    }    
 }
 analizBtn.addEventListener("click", () => {
     analizDurumu = true;
